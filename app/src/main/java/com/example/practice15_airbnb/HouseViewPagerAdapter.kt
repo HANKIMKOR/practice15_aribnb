@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class HouseViewPagerAdapter: ListAdapter<HouseModel, HouseViewPagerAdapter.ItemViewHolder>(differ) {
+class HouseViewPagerAdapter(val itemClicked: (HouseModel) -> Unit): ListAdapter<HouseModel, HouseViewPagerAdapter.ItemViewHolder>(differ) {
 
     inner class ItemViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         fun bind(houseModel: HouseModel) {
@@ -21,6 +21,10 @@ class HouseViewPagerAdapter: ListAdapter<HouseModel, HouseViewPagerAdapter.ItemV
 
             titleTextView.text = houseModel.title
             priceTextView.text = houseModel.price
+
+            view.setOnClickListener {
+                itemClicked(houseModel)
+            }
 
             Glide
                 .with(thumbnailImageView.context)
