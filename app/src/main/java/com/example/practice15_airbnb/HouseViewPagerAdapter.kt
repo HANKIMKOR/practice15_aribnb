@@ -19,6 +19,7 @@ class HouseViewPagerAdapter(val itemClicked: (HouseModel) -> Unit): ListAdapter<
             val priceTextView = view.findViewById<TextView>(R.id.priceTextView)
             val thumbnailImageView = view.findViewById<ImageView>(R.id.thumbnailImageView)
 
+
             titleTextView.text = houseModel.title
             priceTextView.text = houseModel.price
 

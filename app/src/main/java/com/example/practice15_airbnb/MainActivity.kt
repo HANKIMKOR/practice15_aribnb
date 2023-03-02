@@ -30,9 +30,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, Overlay.OnClickLis
         findViewById(R.id.mapView)
     }
 
+
     private val viewPager: ViewPager2 by lazy {
         findViewById(R.id.houseViewPager)
     }
+
 
     private val recyclerView: RecyclerView by lazy {
         findViewById(R.id.recyclerView)
